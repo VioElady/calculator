@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="input-container">
+    <input type="text" value="0" readonly [(ngModel)]="inputText" />
+  </div>
+  <div class="buttons-container">
+    <div class="row">
+      <div class="button gray clear" (click)="clearCalc()">{{this.activeOperationPhase === 2 ? 'C' : 'AC' }}</div>
+      <div class="button gray negativeToggle" (click)="toggleNegavtive()">+/-</div>
+      <div class="button gray percent" (click)="percent()">%</div>
+      <div class="button accent divide" [class.selected]="activeOperation === 'divide'" (click)="toogleCalc('divide')">/</div>
+    </div>
+
+    <div class="row">
+      <div class="button dark" (click)="addSymbol(7)">7</div>
+      <div class="button dark" (click)="addSymbol(8)">8</div>
+      <div class="button dark" (click)="addSymbol(9)">9</div>
+      <div class="button accent" [class.selected]="activeOperation === 'multiply'" (click)="toogleCalc('multiply')">*</div>
+    </div>
+
+    <div class="row">
+      <div class="button dark" (click)="addSymbol(4)">4</div>
+      <div class="button dark" (click)="addSymbol(5)">5</div>
+      <div class="button dark" (click)="addSymbol(6)">6</div>
+      <div class="button accent" [class.selected]="activeOperation === 'subtract'" (click)="toogleCalc('subtract')">-</div>
+    </div>
+
+    <div class="row">
+      <div class="button dark" (click)="addSymbol(1)">1</div>
+      <div class="button dark" (click)="addSymbol(2)">2</div>
+      <div class="button dark" (click)="addSymbol(3)">3</div>
+      <div class="button accent" [class.selected]="activeOperation === 'add'" (click)="toogleCalc('add')">+</div>
+    </div>
+
+    <div class="row">
+      <div class="button span-2 dark" (click)="addSymbol(0)">0</div>
+      <div class="button dark" (click)="addSymbol(',')">,</div>
+      <div class="button accent" (click)="toogleCalc()">=</div>
+    </div>
+  </div>
+</div>
